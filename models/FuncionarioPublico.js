@@ -10,4 +10,4 @@ var FPModel = new mongoose.Schema({
     sueldo: String
 });
 
-module.exports = mongoose.model('FuncionarioPublicoM', FPModel);
+module.exports = mongoose.model('FPModel', FPModel);
