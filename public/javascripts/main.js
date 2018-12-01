@@ -12,7 +12,7 @@ let app = {
         });
     },
     addRow: function(data){
-        let tbody= document.getElementsByClassName("FPS")[0];
+        let tbody = document.getElementsByClassName("FPS")[0];
         let tr = document.createElement("tr");
         tr.innerHTML = `<td>${data.id}</td>
                         <td>${data.nombre}</td>
@@ -23,11 +23,11 @@ let app = {
                             <a href="#" class="delete"> Delete </a>
                         </td>     
                         `
-        document.getElementsByClassName("update")[0].addEventListener('click', event =>{
-            this.addRow(event, this.updatePost());
+        tr.getElementsByClassName("update")[0].addEventListener('click', function(){
+             this.updatePost();
         });
-        document.getElementsByClassName("delete")[0].addEventListener('click', event =>{
-            this.addRow(event, this.deletePost());
+        tr.getElementsByClassName("delete")[0].addEventListener('click', function(){
+            this.deletePost();
         });
         tbody.appendChild(tr);
     },

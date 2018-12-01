@@ -7,7 +7,7 @@ var FPModel = new mongoose.Schema({
         index: true
     },
     partidoPolitico: String,
-    sueldo: String
+    sueldo: Number
 });
 
 module.exports = mongoose.model('FPModel', FPModel);
