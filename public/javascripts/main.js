@@ -14,21 +14,22 @@ let app = {
     addRow: function(data){
         let tbody = document.getElementsByClassName("FPS")[0];
         let tr = document.createElement("tr");
-        tr.innerHTML = `<td>${data.id}</td>
+        tr.innerHTML = `<td>${data._id}</td>
                         <td>${data.nombre}</td>
                         <td>${data.partidoPolitico}</td>
                         <td>${data.sueldo}</td>   
                         <td>
-                            <a href="#" class="update"> Update </a>
-                            <a href="#" class="delete"> Delete </a>
+                            <a href="#" class="update"> <i class="fas fa-edit"></i></a>
+                            <a href="#" class="delete"> <i class="fas fa-trash-alt"></i></a>
                         </td>     
                         `
         tr.getElementsByClassName("update")[0].addEventListener('click', function(){
-             this.updatePost();
+            this.updatePost();
         });
         tr.getElementsByClassName("delete")[0].addEventListener('click', function(){
-            this.deletePost();
-        });
+            this.deletePost;
+        }
+        );
         tbody.appendChild(tr);
     },
     submitPost: (event, addRow)=>{
@@ -69,7 +70,7 @@ let app = {
             }
         });
     },
-    deletePost:(event, data, tr, tbody)=>{
+    deletePost: (event, data, tr, tbody)=>{
         event.preventDefault();
         fetch('/api/FuncionarioPublico/'+ data._id,{
             method: 'DELETE'

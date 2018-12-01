@@ -10,8 +10,13 @@ h1{
   font-size: 2.5rem;
   margin-left: 20%;
 }
+#contForm{
+  margin-bottom: 5%; 
+  margin-left: 20%;
+  margin-top: 5%;
+}
 #container{
   margin-left: 20%;
   margin-top:3%;
- 
+  max-width: 1000px;
 }
