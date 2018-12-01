@@ -1,5 +1,24 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1='Administrador de Funcionario Publico'
+  .errors
+  form(action='/api/FuncionarioPublico', method='POST', name='FPForm')
+    label(for="nombre") Nombre
+    input#nombre(type="text" name="nombre" required)
+    label(for="partidoPolitico") Partido Politico
+    input#partidoPolitico(type="text" name="partidoPolitico" required)
+    label(for="sueldo") Sueldo
+    input#sueldo(type="text" name="sueldo" required)
+    input(type="submit" value="Enviar")
+  table
+    thead
+    th id
+    th nombre
+    th partido politico
+    th sueldo
+    th opciones
+  tbody.FPS
+
+  script(src="/javascripts/main.js")
+    
