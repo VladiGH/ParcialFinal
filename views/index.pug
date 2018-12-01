@@ -1,24 +1,25 @@
 extends layout
 
 block content
-  h1='Administrador de Funcionario Publico'
+  h1(class="col-sm-10")='Administrador de Funcionario Publico'
   .errors
-  form(action='/api/FuncionarioPublico', method='POST', name='FPForm')
-    label(for="nombre") Nombre
-    input#nombre(type="text" name="nombre" required)
-    label(for="partidoPolitico") Partido Politico
-    input#partidoPolitico(type="text" name="partidoPolitico" required)
-    label(for="sueldo") Sueldo
-    input#sueldo(type="text" name="sueldo" required)
-    input(type="submit" value="Enviar")
-  table
-    thead
-    th id
-    th nombre
-    th partido politico
-    th sueldo
-    th opciones
-  tbody.FPS
+  #container.col
+    form(action='/api/FuncionarioPublico', method='POST', name='FPForm', class="form-inline")
+      label(for="nombre" class="sr-only") 
+      input#nombre(type="text" name="nombre" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder ="Nombre" required)
+      label(for="partidoPolitico" class="sr-only") 
+      input#partidoPolitico(type="text" name="partidoPolitico" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="Partido Politico" required)
+      label(for="sueldo" class="sr-only") 
+      input#sueldo(type="text" name="sueldo"  class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="Sueldo" required)
+      input(type="submit" value="Enviar" class="btn btn-primary")
+    table
+      thead
+      th id
+      th nombre
+      th partido politico
+      th sueldo
+      th opciones
+    tbody.FPS
 
   script(src="/javascripts/main.js")
     

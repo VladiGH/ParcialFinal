@@ -23,11 +23,11 @@ let app = {
                             <a href="#" class="delete"> Delete </a>
                         </td>     
                         `
-        document.getElementsByName("update")[0].addEventListener('click', event =>{
-            this.submitPost(event, this.updatePost());
+        document.getElementsByClassName("update")[0].addEventListener('click', event =>{
+            this.addRow(event, this.updatePost());
         });
-        document.getElementsByName("delete")[0].addEventListener('click', event =>{
-            this.submitPost(event, this.deletePost());
+        document.getElementsByClassName("delete")[0].addEventListener('click', event =>{
+            this.addRow(event, this.deletePost());
         });
         tbody.appendChild(tr);
     },
@@ -58,7 +58,9 @@ let app = {
         fetch('/api/FuncionarioPublico',{
             method: 'GET'
         })
-        .then(res => {return res.json()})
+        .then(res => {
+            return res.json()
+        })
         .then(data =>{
             if(data.ok){
                 data.FPS.forEach(elemento => {
