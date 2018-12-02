@@ -5,7 +5,7 @@ block content
   .errors
   #contForm
     form(action='/api/FuncionarioPublico', method='POST', name='FPForm', class="form-inline")
-      label(for="nombre" class="sr-only") 
+      label.sr-only(for="nombre") 
       input#nombre(type="text" name="nombre" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder ="Nombre" required)
       label(for="partidoPolitico" class="sr-only") 
       input#partidoPolitico(type="text" name="partidoPolitico" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="Partido Politico" required)
